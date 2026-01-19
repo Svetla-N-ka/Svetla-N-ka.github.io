@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест по веб-программированию</title>
+    <link rel="stylesheet" href="styles 5.css">
+</head>
+<body>
+    <h1>Тест по Web-программированию</h1> <!-- Заголовок переносим сюда -->
+
+    <form id="quizForm" action="submit-test.php" method="POST">
+        <fieldset>
+            <legend>Вопрос 1</legend>
+            <label>Какой атрибут в HTML используется для задания уникального идентификатора элемента?</label><br>
+            <input type="radio" name="question1" value="class"> `class`<br>
+            <input type="radio" name="question1" value="id"> `id`<br>
+            <input type="radio" name="question1" value="src"> `src`<br>
+            <input type="radio" name="question1" value="alt"> `alt`<br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Вопрос 2</legend>
+            <label>Какой оператор в JavaScript используется для объявления переменной?</label><br>
+            <input type="radio" name="question2" value="let"> `let`<br>
+            <input type="radio" name="question2" value="print"> `print`<br>
+            <input type="radio" name="question2" value="variable"> `variable`<br>
+            <input type="radio" name="question2" value="define"> `define`<br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Вопрос 3</legend>
+            <label>Какое свойство CSS регулирует цвет текста?</label><br>
+            <input type="radio" name="question3" value="font-color"> `font-color`<br>
+            <input type="radio" name="question3" value="text-color"> `text-color`<br>
+            <input type="radio" name="question3" value="color"> `color`<br>
+            <input type="radio" name="question3" value="background-color"> `background-color`<br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Вопрос 4</legend>
+            <label>Какой метод JavaScript выводит диалоговое окно с предупреждением?</label><br>
+            <select name="question4">
+                <option value="alert">`alert()`</option>
+                <option value="prompt">`prompt()`</option>
+                <option value="confirm">`confirm()`</option>
+                <option value="log">`log()`</option>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>Вопрос 5</legend>
+            <label>Какой тип данных в JavaScript представляет собой целое число?</label><br>
+            <input type="radio" name="question5" value="string"> `string`<br>
+            <input type="radio" name="question5" value="boolean"> `boolean`<br>
+            <input type="radio" name="question5" value="null"> `null`<br>
+            <input type="radio" name="question5" value="integer"> `integer`<br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Вопрос 6</legend>
+            <label>Какой протокол используется для передачи данных по сети в Интернете?</label><br>
+            <input type="radio" name="question6" value="FTP"> FTP<br>
+            <input type="radio" name="question6" value="HTTPS"> HTTPS<br>
+            <input type="radio" name="question6" value="SSH"> SSH<br>
+            <input type="radio" name="question6" value="SMTP"> SMTP<br>
+        </fieldset>
+
+        <button type="button" onclick="checkTest()">Проверить тест</button>
+    </form>
+
+    <div id="results"></div>
+
+    <script>
+        function checkTest() {
+            const questions = [
+                { name: 'question1', correct: 'id' },
+                { name: 'question2', correct: 'let' },
+                { name: 'question3', correct: 'color' },
+                { name: 'question4', correct: 'alert' },
+                { name: 'question5', correct: 'integer' },
+                { name: 'question6', correct: 'HTTPS' }
+            ];
+
+            let correctCount = 0;
+            let wrongQuestions = [];
+
+            questions.forEach(q => {
+                let isCorrect = false;
+
+                if (q.name === 'question4') {
+                    const dropdownValue = document.querySelector(`select[name="${q.name}"]`).value;
+                    if (dropdownValue === q.correct) {
+                        isCorrect = true;
+                    }
+                } else {
+                    const checkedRadio = document.querySelector(`input[name="${q.name}"]:checked`);
+                    if (checkedRadio && checkedRadio.value === q.correct) {
+                        isCorrect = true;
+                    }
+                }
+
+                if (isCorrect) {
+                    correctCount++;
+                } else {
+                    wrongQuestions.push(q.name);
+                }
+            });
+
+            const resultContainer = document.getElementById('results');
+            resultContainer.innerHTML = `
+                <h2>Результаты теста:</h2>
+                <p>Правильных ответов: ${correctCount}</p>
+                <p>Неверные ответы: ${wrongQuestions.length > 0 ? wrongQuestions.join(', ') : 'отсутствуют'}</p>
+            `;
+        }
+    </script>
+</body>
+</html>

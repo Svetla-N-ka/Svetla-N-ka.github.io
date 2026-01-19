@@ -1,0 +1,88 @@
+/* Основная навигация */
+header nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #333;
+}
+
+header nav ul li a {
+    color: rgb(4, 146, 101);
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    background-color: #555;
+}
+
+/* Подсветка активного пункта меню */
+.active-link {
+    background-color: #555;
+}
+
+/* Общая стилизация для галерейного раздела */
+section {
+    padding: 40px;
+    margin-bottom: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    background-image: url('img/fon_galerey.jpg'); /* Путь к изображению */
+    background-size: cover; /* Изображение покроет всю область */
+    background-position: center; /* Расположение по центру */
+    background-repeat: no-repeat; /* Без повтора */
+    padding: 20px;
+}
+
+
+figure {
+    flex-basis: calc(33.33% - 20px); /* Три изображения в ряд */
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+figure img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+figcaption {
+    padding: 10px;
+    background-color: #ffffff;
+    font-weight: bold;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    figure {
+        flex-basis: calc(50% - 20px); /* Два изображения в ряду */
+    }
+}
+
+@media (max-width: 480px) {
+    figure {
+        flex-basis: 100%; /* Одно изображение в ряду */
+    }
+}
+
+/* Ховер эффект */
+figure:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}

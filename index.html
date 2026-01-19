@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма регистрации участника конференции</title>
+    <link rel="stylesheet" href="styles.css"> <!-- подключение CSS -->
+    <style>
+        /* Основной контейнер формы */
+        .form-container {
+            max-width: 350px; /* Максимальная ширина формы */
+            width: 100%; /* Адаптивна для мобильных устройств */
+            margin: 0 auto; /* Централизация по горизонтали */
+            padding: 40px;
+            background-color: rgba(141, 204, 238, 0.8); /* Серый полупрозрачный фон */
+            border-radius:10px;
+            text-align: center; /* Центральное размещение элементов */
+        }
+
+        /* Задание фона всему сайту */
+        body {
+            background-image: url('img/fon.jpg'); /* Фон странички */
+            background-size: cover; /* Картинка покрывет весь экран */
+            background-position: center; /* Расположение по центру */
+            background-repeat: no-repeat; /* Без повтора */
+        }
+
+    </style>
+</head>
+<body>
+    
+<!-- Начало горизонтального меню -->
+    <nav class="navbar">
+        <ul class="menu">
+            <li><a href="#home">Главная</a></li>
+                <li><a href="register.html" target="_blank">Спикеры</a>
+                <li><a href="gallery.html" target="_blank">Фотогалерея</a></li> 
+                <li><a href="Test.html">Тест</a></li>
+                <li><a href="login.html">Вход</a></li> <!-- Добавляем пункт входа -->
+        </ul>
+    </nav>
+    <!-- Конец горизонтального меню -->
+
+    <div class="form-container">
+        <h2>Форма регистрации участника Online конференции</h2>
+        <form>
+            <div class="form-group">
+                <label for="fullname">Фамилия Имя Отчество:</label>
+                <input type="text" id="fullname" name="fullname" required placeholder="Иванов Иван Иванович">
+            </div>
+            <div class="form-group">
+                <label for="phone">Контактный телефон:</label>
+                <input type="tel" id="phone" name="phone" required placeholder="+7XXXXXXXXXX">
+                <label for="email">Адрес электронной почты:</label>
+                <input type="email" id="email" name="email" required placeholder="example@example.com">
+            </div>
+            <div class="form-group">
+                <label for="section">Секции конференции:</label>
+                <select id="section" name="section" required>
+                    <option value="" disabled selected>-- выберите секцию --</option>
+                    <option value="mathematics">Математика</option>
+                    <option value="physics">Физика</option>
+                    <option value="informatics">Информатика</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="birthday">Дата рождения:</label>
+                <input type="date" id="birthday" name="birthday" required>
+            </div>
+            <div class="form-group">
+                <input type="checkbox" id="has-presentation" name="has-presentation" onclick="showTopicField(this.checked)">
+                <label for="has-presentation">Есть доклад?</label>
+            </div>
+            <div id="topic-field" class="form-group">
+                <label for="presentation-topic">Тема доклада:</label>
+                <textarea id="presentation-topic" name="presentation-topic" rows="4" cols="50"></textarea>
+            </div>
+            <div class="btn-container">
+                <button type="submit">Отправить</button>
+            </div>
+        </form>
+    </div>
+    <h3>
+        Полезные ресурсы:<br>
+            <a href="https://педпроект.рф/конференции-школьников-студентов/?ysclid=mkfu2uhi2c276573907" target="_blank">Конференции</a>,
+            <a href="https://centreinstein.ru/top/ped_konference/?ysclid=mkftzhf0gl664104945" target="_blank">Новости</a>
+    </h3>
+    <footer>
+       Дубна, 2025
+    </footer>
+
+    <script>
+        // Скрипт для переключателя темы доклада
+        function showTopicField(isChecked) {
+            const topicField = document.getElementById('topic-field');
+            if (isChecked) {
+                topicField.style.display = 'block';
+            } 
+                else {
+                topicField.style.display = 'none';
+                 }
+        }
+    </script>
+</body>
+</html>

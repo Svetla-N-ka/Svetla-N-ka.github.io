@@ -1,0 +1,191 @@
+/* Заголовок формы */
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #fcfcff;
+}
+/* Поля формы */
+.form-group {
+            margin-bottom:20px;
+            text-align: left; /* Чтобы метки были слева */
+        }
+
+/* Стили для горизонтального меню */
+.navbar {
+    background-color: #5bacf4; /* Цвет фона меню */
+    overflow: hidden; /* Предотвращает выход за пределы */
+    position: sticky; /* Заставляет меню прилипнуть к верхнему краю */
+    top: 0;
+    z-index: 1000; /* Навигация всегда наверху */
+}
+
+.menu {
+    list-style-type: none; /* Убираем маркеры списка */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Группировка ссылок в ряд */
+    justify-content: space-evenly; /* Равномерное распределение пунктов */
+}
+
+.menu li {
+    float: left; /* Элементы располагаются горизонтально */
+}
+
+.menu li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out; /* Плавный переход цветов */
+}
+
+.menu li a:hover {
+    background-color: #72c0f7; /* Светлее при наведении */
+}
+
+/* Мобильная версия меню (меньше 600px) */
+@media only screen and (max-width: 600px) {
+    .menu {
+        flex-direction: column; /* Вертикальное меню */
+        align-items: center; /* Центрирование пунктов */
+    }
+
+    .menu li {
+        float: none; /* Снимаем плавание */
+        width: 100%; /* Полная ширина */
+    }
+
+    .menu li a {
+        padding: 10px; /* Компактность для мобильных устройств */
+    }
+}
+
+/* Поля */
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+.form-container {
+    height: calc(60vh - 60px); /* минус верхний и нижний отступы */
+    padding: 10px; /* внешние отступы сверху и снизу */
+}
+
+/* Вводы и кнопки */
+input, select, textarea, button {
+    width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            transition: all 0.3s ease-in-out;
+}
+
+/* Курсор при наведении */
+button {
+    background-color:#0408f7 ;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #d55757;
+}
+
+/* Кнопка отправки */
+.btn-container {
+    display: flex;
+    justify-content: center; /* Центрирование кнопки */
+}
+
+/* Скрытая область ввода темы доклада */
+#topic-field {
+    display: none;
+}
+
+/* Внешний вид нижнего колонтитула */
+footer {
+    text-align: center; /* Расположим по центру */
+    margin-top: 10px;
+    font-size: 20px; /* Увеличим шрифт */
+    color: #f5f5f7;
+}
+
+/* Выделим первую букву другим цветом */
+footer::first-letter {
+    color: #160078
+}
+    
+/* Оформление ссылок */
+a {
+    color: white;/* Белый цвет ссылок */
+    text-decoration: underline; /* Подчеркиваем ссылки */
+}
+/* Заголовок формы */
+h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #0408f7;
+}
+/* Поля формы */
+.form-group {
+            margin-bottom:25px;
+            text-align: left; /* Чтобы метки были слева */
+        }
+
+/* Поля */
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Вводы и кнопки */
+input, select, textarea, button {
+    width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            transition: all 0.3s ease-in-out;
+}
+
+/* Курсор при наведении */
+button {
+    background-color:#0408f7 ;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #fa6a6a;
+}
+
+/* Кнопка отправки */
+.btn-container {
+    display: flex;
+    justify-content: center; /* Центрирование кнопки */
+}
+
+/* Скрытая область ввода темы доклада */
+#topic-field {
+    display: none;
+}
+
+/* Внешний вид нижнего колонтитула */
+h3 {
+    text-align: center; /* Расположим по центру */
+    margin-top: 200px;
+    font-size: 25px; /* Увеличим шрифт */
+    color: #f5f5f7;
+}
+
+/* Оформление ссылок */
+a {
+    font-size: 20px; /* Устанавливаем размер шрифта 20 пикселей */
+    color: white;/* Белый цвет ссылок */
+    text-decoration: underline; /* Подчеркиваем ссылки */
+}
+    a:hover {
+    color: #fa6a6a; /* Красный цвет при наведении */
+}
+footer {
+   color: white;
+}

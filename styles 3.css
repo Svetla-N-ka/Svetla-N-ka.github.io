@@ -1,0 +1,96 @@
+/* Основной контейнер страницы */
+.page-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 200px; /* Увеличим отступы */
+    background: linear-gradient(to bottom, #3375b6, #f4f6f9); /* Добавим приятный фон с градиентом */
+}
+
+/* Боковая панель с фото спикеров */
+.speakers-sidebar {
+    width: 250px; /* Широкий блок */
+    background: linear-gradient(to bottom, #fcfdfe, #3375b6); /* Добавим приятный фон с градиентом */
+    padding: 40px; /* Увеличим отступы */
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-right: 40px;
+}
+
+.speaker {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.speaker img {
+    width: 90px; /* Увеличим размер фото */
+    height: 90px;
+    object-fit: cover;
+    border-radius: 50%; /* Круглая аватарка */
+    margin-right: 15px;
+}
+
+/* Форма регистрации */
+.form-container {
+    flex-grow: 1; /* Занимает оставшуюся ширину */
+    background-color: #ffffff;
+    padding: 40px; /* Увеличим отступы */
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px; /* Увеличим расстояние между полями */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 12px; /* Увеличим внутренний отступ */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+    border-color: #007BFF;
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    padding: 12px 20px; /* Увеличим отступы */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .page-wrapper {
+        flex-direction: column; /* На мобильных устройствах ставим в колонку */
+    }
+
+    .speakers-sidebar {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
